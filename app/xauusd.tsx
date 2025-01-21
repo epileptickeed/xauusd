@@ -56,7 +56,7 @@ function TradingViewWidget() {
     container.current.appendChild(script);
   }, []);
 
-  return <div className="w-[1200px] h-[400px] " ref={container} />;
+  return <div className="w-[500px] h-[400px] " ref={container} />;
 }
 
 export default memo(TradingViewWidget);
