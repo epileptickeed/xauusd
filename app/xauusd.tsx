@@ -1,4 +1,5 @@
 "use client";
+
 // TradingViewWidget.jsx
 import React, { useEffect, useRef, memo } from "react";
 
@@ -32,31 +33,39 @@ function TradingViewWidget() {
           "hideSymbolLogo": false,
           "scalePosition": "right",
           "scaleMode": "Normal",
-          "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+          "fontFamily": "Trebuchet MS, sans-serif",
           "fontSize": "10",
           "noTimeScale": false,
           "valuesTracking": "1",
           "changeMode": "price-and-percent",
-          "chartType": "area",
-          "maLineColor": "#2962FF",
-          "maLineWidth": 1,
-          "maLength": 9,
-          "headerFontSize": "medium",
-          "lineWidth": 2,
+          "chartType": "candlesticks",
+          "headerFontSize": "small",
           "lineType": 0,
           "dateRanges": [
-            "1d|1",
-            "1m|30",
-            "3m|60",
-            "12m|1D",
-            "60m|1W",
-            "all|1M"
-          ]
+            "1d|15"
+          ],
+          "upColor": "rgba(0, 0, 0, 1)",
+          "downColor": "rgba(255, 255, 255, 1)",
+          "borderUpColor": "rgba(0, 0, 0, 1)",
+          "borderDownColor": "rgba(0, 0, 0, 1)",
+          "wickUpColor": "rgba(0, 0, 0, 1)",
+          "wickDownColor": "rgba(0, 0, 0, 1)"
         }`;
     container.current.appendChild(script);
   }, []);
 
-  return <div className="w-[500px] h-[400px] " ref={container} />;
+  return (
+    <div className="w-[400px] h-[350px]" ref={container}>
+      <div className="tradingview-widget-container__widget"></div>
+      <div className="tradingview-widget-copyright">
+        <a
+          href="https://www.tradingview.com/"
+          rel="noopener nofollow"
+          target="_blank"
+        ></a>
+      </div>
+    </div>
+  );
 }
 
 export default memo(TradingViewWidget);
