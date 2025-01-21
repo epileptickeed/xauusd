@@ -1,5 +1,9 @@
 import Xauusd from "./xauusd";
 
 export default function Home() {
-  return <Xauusd />;
+  return (
+    <div className="h-full">
+      <Xauusd />
+    </div>
+  );
 }
