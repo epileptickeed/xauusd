@@ -54,18 +54,7 @@ function TradingViewWidget() {
     container.current.appendChild(script);
   }, []);
 
-  return (
-    <div className="w-full h-full" ref={container}>
-      <div className="tradingview-widget-container__widget"></div>
-      <div className="tradingview-widget-copyright">
-        <a
-          href="https://www.tradingview.com/"
-          rel="noopener nofollow"
-          target="_blank"
-        ></a>
-      </div>
-    </div>
-  );
+  return <div className="w-full h-full" ref={container}></div>;
 }
 
 export default memo(TradingViewWidget);
